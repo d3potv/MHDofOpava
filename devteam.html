@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEV-TEAM | MHD of Opava</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-hover: #263349;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #e11d48;
+      --accent-hover: #be123c;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border-bottom: 2px solid var(--accent);
+      padding: 1.2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
+    }
+    header span { color: var(--accent); }
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.8rem 1rem;
+      background: #162032;
+      border-bottom: 1px solid var(--border);
+      justify-content: flex-start;
+    }
+    @media (min-width: 768px) {
+      nav { justify-content: center; }
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      background: var(--card);
+      font-size: 0.9rem;
+      white-space: nowrap;
+      border: 1px solid var(--border);
+      transition: 0.2s;
+    }
+    nav a:hover, nav a.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .page-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .page-title h2 { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    .page-title p { color: var(--muted); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .member-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .member-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .member-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      background: #334155;
+      flex-shrink: 0;
+    }
+    .member-info h3 {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+    .handle {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-family: monospace;
+    }
+    .roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .role-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .role-owner { background: rgba(225, 29, 72, 0.2); color: #fb7185; border: 1px solid #e11d48; }
+    .role-dev { background: rgba(234, 179, 8, 0.2); color: #facc15; border: 1px solid #eab308; }
+    .role-mod { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+    .role-collab { background: rgba(249, 115, 22, 0.2); color: #fb923c; border: 1px solid #f97316; }
+    .bio {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      background: rgba(15, 23, 42, 0.5);
+      padding: 0.75rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+    }
+    .bio a {
+      color: #38bdf8;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .bio a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MHD of <span>Opava</span></h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Domů</a>
+    <a href="vozovy_park.html">Vozový park</a>
+    <a href="linky.html">Linky</a>
+    <a href="jizdni_rady.html">Jízdní řády</a>
+    <a href="clenove.html">Členové</a>
+    <a href="devteam.html" class="active">DEV-TEAM</a>
+  </nav>
+
+  <main>
+    <div class="page-title">
+      <h2>DEV-TEAM projektu</h2>
+      <p>Lidé, kteří tvoří a spravují MHD of Opava</p>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- @sotouszopavy (Petr) -->
+      <div class="member-card">
+        <div class="member-top">
+          <img class="avatar" src="img/sotouszopavy.png" alt="Petr (@sotouszopavy)"
+               onerror="this.src='https://ui-avatars.com/api/?name=Petr&background=e11d48&color=fff&size=128'">
+          <div class="member-info">
+            <h3>Petr</h3>
+            <div class="handle">@sotouszopavy</div>
+          </div>
+        </div>
+        <div class="roles">
+          <span class="role-badge role-owner">Zakladatel & Hlavní vývojář</span>
+        </div>
+        <div class="bio">
+          Busspotter a trainspotter z Opavy. Tvůrce projektu MHD of Opava, fanoušek Robloxu (CCSv3, Nid's buses & trams) a Minecraftu.
+        </div>
+      </div>
+
+      <!-- VTK -->
+      <div class="member-card">
+        <div class="member-top">
+          <img class="avatar" src="img/vtk.png" alt="VTK"
+               onerror="this.src='https://ui-avatars.com/api/?name=VTK&background=eab308&color=000&size=128'">
+          <div class="member-info">
+            <h3>VTK</h3>
+            <div class="handle">@omsi20266</div>
+          </div>
+        </div>
+        <div class="roles">
+          <span class="role-badge role-dev">Developer</span>
+          <span class="role-badge role-collab">Collaborator</span>
+        </div>
+        <div class="bio">
+          Spolutvůrce a vývojář dopravních projektů (MHD KEMAK & MHD of Opava).
+        </div>
+      </div>
+
+      <!-- David -->
+      <div class="member-card">
+        <div class="member-top">
+          <img class="avatar" src="img/david.png" alt="David3"
+               onerror="this.src='https://ui-avatars.com/api/?name=David&background=ec4899&color=fff&size=128'">
+          <div class="member-info">
+            <h3>David3</h3>
+            <div class="handle">@david30559</div>
+          </div>
+        </div>
+        <div class="roles">
+          <span class="role-badge role-dev">Dev-Team</span>
+          <span class="role-badge role-mod">Moderator</span>
+        </div>
+        <div class="bio">
+          Člen vývojářského týmu a moderátor komunity MHD of Opava.
+        </div>
+      </div>
+
+      <!-- Jakub -->
+      <div class="member-card">
+        <div class="member-top">
+          <img class="avatar" src="img/jakub.png" alt="Jakub"
+               onerror="this.src='https://ui-avatars.com/api/?name=Jakub&background=f97316&color=fff&size=128'">
+          <div class="member-info">
+            <h3>Jakub</h3>
+            <div class="handle">@kubis_aron_94001</div>
+          </div>
+        </div>
+        <div class="roles">
+          <span class="role-badge role-dev">Developer</span>
+        </div>
+        <div class="bio">
+          Vývojář projektu. Fanoušek HZS techniky a českých her.
+        </div>
+      </div>
+
+      <!-- Tadeax Studio -->
+      <div class="member-card">
+        <div class="member-top">
+          <img class="avatar" src="img/tadeax.png" alt="Tadeax Studio"
+               onerror="this.src='https://ui-avatars.com/api/?name=TS&background=2563eb&color=fff&size=128'">
+          <div class="member-info">
+            <h3>Tadeax Studio</h3>
+            <div class="handle">@tadeax_studio.cz</div>
+          </div>
+        </div>
+        <div class="roles">
+          <span class="role-badge role-dev">Developer</span>
+          <span class="role-badge role-collab">Webdesigner</span>
+        </div>
+        <div class="bio">
+          YouTuber a webdesigner.<br>
+          Web: <a href="https://tadeaxovo-studio-cz.github.io/Tadeax-Studio/" target="_blank">Tadeax Studio</a> |
+          <a href="https://linktr.ee/tadeax_studio.cz" target="_blank">Linktree</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 MHD of Opava | Vytvořeno pro komunitu
+  </footer>
+
+</body>
+</html>
